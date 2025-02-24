@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.PowerArt)Model.Content;
+    var settings = (ContentModels.PowerArtSettings)Model.Settings;
+
+    var elementTag = string.IsNullOrEmpty(settings.TextType) ? "p" : settings.TextType;
+    if (elementTag.Equals("Paragraph")) {
+        elementTag = "p";
+    }
+}
+
+<@elementTag class="powerart">@(content.Text ?? "")</@elementTag>

@@ -1,0 +1,14 @@
+{
+  "id": "Spark2025.Backoffice.Extensions",
+  "name": "Spark2025.Backoffice.Extensions",
+  "version": "0.0.0",
+  "allowPackageTelemetry": true,
+  "extensions": [
+    {
+      "name": "Spark 2025Backoffice Extensions Bundle",
+      "alias": "Spark2025.Backoffice.Extensions.Bundle",
+      "type": "bundle",
+      "js": "/App_Plugins/Spark2025BackofficeExtensions/spark-2025-backoffice-extensions.js"
+    }
+  ]
+}

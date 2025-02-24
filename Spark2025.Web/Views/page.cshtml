@@ -1,0 +1,52 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<head>
+	<title>Spark 2025</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<style>
+		html, body {
+			font-family: 'Roboto', serif;
+		}
+		body {
+			background: #333;
+			padding-top: 5em;
+			color: #fff;
+		}
+		main {
+			max-width: 500px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+		}
+	</style>
+	<link rel="stylesheet" href="/css/PowerArt.css" />
+</head>
+
+<body>
+<main>
+	@Model.Value("bodyText")
+
+	<details>
+		<summary>Properties</summary>
+		<ul>
+			@foreach (var prop in Model.Properties)
+			{
+				<li>
+					@prop.Alias:
+					<ul>
+						<li>Schema: <strong>@prop.PropertyType.EditorAlias</strong></li>
+						<li>Editor: <strong>@prop.PropertyType.EditorUiAlias</strong></li>
+					</ul>
+				</li>
+			}
+		</ul>
+	</details>
+</main>
+</body>
